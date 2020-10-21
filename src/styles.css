@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@media (min-width: 768px)
+{
+    body
+    {
+        background: #252850;
+    }
+}
+@media (min-width: 300px) and (max-width: 767px)
+{
+    body
+    {
+        background: #f3f3f3;
+    }
+}

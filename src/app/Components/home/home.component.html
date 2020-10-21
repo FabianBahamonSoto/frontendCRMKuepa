@@ -1,0 +1,481 @@
+<div class="row" style="margin: 0%;" *ngIf="resolucion > 500, else celulares">
+    <div class="col-1 text-center">
+        <ul class="nav flex-column">
+            <li class="nav-item imgLogo">
+                <a class="navbar-brand" routerLink="">
+                    <img src="../../../assets/Ket.jpg" class="img-fluid" loading="lazy">
+                </a>
+            </li>
+            <li class="nav-item active word menu">
+                <a class="nav-link icon" href="#">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                    </svg>
+                    <section>Home</section>
+                </a>
+            </li>
+            <li class="nav-item active word text-center menu">
+                <a class="nav-link icon" href="#">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-outbound" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    <section>Clientes por llamar</section>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-11 text-center" style="background: #f3f3f3; background: #f3f3f3; border-bottom-left-radius: 10%; border-top-left-radius: 10%;">
+        <div class="row">
+            <div class="col-10 text-center">
+
+                <div class="row" style="margin-bottom: 5%; margin-top: 10%; margin-right: 25%;">
+                    <div class="col-sm" style="font-size: 200%">Hola Fabián!</div>
+                    <div class="col-sm" class="fecha">{{date | date:'medium'}}</div>
+                </div>
+                <div class="row" style="margin-bottom: 2.5%; margin-top: 10%;">
+                    <div class="col-sm">
+                        <div class="card cardSizeCircle">
+                            <div class="title" style="margin-bottom: 5%;">Estado General</div>    
+                            
+                            <div>
+                                <div>
+                                  <div style="display: block">
+                                    <canvas baseChart
+                                      [data]="doughnutChartData"
+                                      [labels]="doughnutChartLabels"
+                                      [chartType]="doughnutChartType">
+                                    </canvas>
+                                  </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card cardSizeTable">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <div class="title" style="margin-bottom: 5%;">Meta grupal</div>
+                                <div class="progress">
+                                    <progress style="padding-right: 10px; font-size: 4rem; background-color: orange; " max="500" value="{{rolFantasy}}">{{rolFantasy}}</progress>
+                                </div>
+                                <small class="text-muted">
+                                    {{rolFantasy}} Jugadores con <strong>Papel de fantasia</strong> mayor de 3, de 500!
+                                </small>
+                                <div class="progress">
+                                    <progress style="padding-right: 10px; font-size: 4rem; background-color: orange; " max="50" value="{{chess}}">{{chess}}</progress>
+                                </div>
+                                <small class="text-muted">
+                                    {{chess}} Jugadores <strong>Cheese</strong>, de 50!
+                                </small>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center" style="margin-bottom: 1.5%;" *ngIf="resolucion > 1024, else resMoviles">
+                    <div class="col-sm" style="display: flex; justify-content: center;">
+                        <div class="card bg-light mb-3" style="max-width: 18rem; border-radius: 5%;">
+                            <div class="card-header">
+                                <strong style="font-size: 100%;" style="color: #5A5B5D;">Conexiones de agenda para hoy</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="scroll-container">
+                                    <div class="nombresScroll text-center" *ngFor="let contacto of cliente">
+                                        <a routerLink="">
+                                            {{contacto.localized_name}}; este usuario tiene {{contacto.roles.length}} roles
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-award" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l-1.51-.229L8 1.126l-1.355.702-1.51.229-.684 1.365-1.086 1.072L3.614 6l-.25 1.506 1.087 1.072.684 1.365 1.51.229L8 10.874l1.356-.702 1.509-.229.684-1.365 1.086-1.072L12.387 6l.248-1.506-1.086-1.072-.684-1.365z"/>
+                                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <strong>Tu plan para hoy!</strong>
+                            </blockquote>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card cardSizeNivels">
+                                    <blockquote class="blockquote mb-0 card-body">
+                                        <div class="section" style="display: flex; justify-content: center;">
+                                            <div class="circle1" style="color: #f3f3f3; font-weight: bold;">
+                                                <section style="margin-top: 35%;">
+                                                    {{equipoSerenity}}
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <footer class="blockquote-footer">
+                                            <small class="text-muted">
+                                                Jugadores del equipo <strong>Team Serenity</strong>
+                                            </small>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card cardSizeNivels">
+                                    <blockquote class="blockquote mb-0 card-body">
+                                        <div class="section" style="display: flex; justify-content: center; align-items: center;">
+                                            <div class="circle2" style="color: #f3f3f3; font-weight: bold;">
+                                                <section style="margin-top: 35%;">
+                                                    {{estado}}
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <footer class="blockquote-footer">
+                                            <small class="text-muted">
+                                                Jugadores con estado <strong>Plus</strong>
+                                            </small>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <div class="w-100"></div>
+
+                            <div class="col-sm">
+                                <div class="card">
+                                    <blockquote class="blockquote mb-0 card-body">
+                                        <div class="section" style="display: flex; justify-content: center;">
+                                            <div class="circle3" style="justify-content: center; align-items: center; color: #f3f3f3; font-weight: bold;">
+                                                <section style="margin-top: 35%;">
+                                                    {{profesional}}
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <footer class="blockquote-footer">
+                                            <small class="text-muted">
+                                                Jugadores <strong>Profesionales</strong>
+                                            </small>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <!--<div class="col">col</div>-->
+                          </div>
+                    </div>
+                </div>
+
+                <ng-template #resMoviles>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="container">
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="col-sm" style="display: flex; justify-content: center;">
+                                        <div class="card bg-light mb-3" style="max-width: 18rem; border-radius: 5%;">
+                                            <div class="card-header">
+                                                <strong style="font-size: 100%;" style="color: #5A5B5D;">Conexiones de agenda para hoy</strong>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="scroll-container">
+                                                    <div class="nombresScroll text-center" *ngFor="let contacto of cliente">
+                                                        <a routerLink="">
+                                                            {{contacto.localized_name}}; este usuario tiene {{contacto.roles.length}} roles
+                                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-award" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l-1.51-.229L8 1.126l-1.355.702-1.51.229-.684 1.365-1.086 1.072L3.614 6l-.25 1.506 1.087 1.072.684 1.365 1.51.229L8 10.874l1.356-.702 1.509-.229.684-1.365 1.086-1.072L12.387 6l.248-1.506-1.086-1.072-.684-1.365z"/>
+                                                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="w-100"></div>
+                                  <div class="col" style="margin-bottom: 10%;">
+                                    <div class="card">
+                                        <blockquote class="blockquote mb-0 card-body">
+                                            <strong>Tu plan para hoy!</strong>
+                                        </blockquote>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card cardSizeNivels">
+                                            <blockquote class="blockquote mb-0 card-body">
+                                                <div class="section" style="display: flex; justify-content: center;">
+                                                    <div class="circle1" style="color: #f3f3f3; font-weight: bold;">
+                                                        <section style="margin-top: 35%;">
+                                                            {{equipoSerenity}}
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                                <footer class="blockquote-footer">
+                                                    <small class="text-muted">
+                                                        Jugadores del equipo <strong>Team Serenity</strong>
+                                                    </small>
+                                                </footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card cardSizeNivels">
+                                            <blockquote class="blockquote mb-0 card-body">
+                                                <div class="section" style="display: flex; justify-content: center; align-items: center;">
+                                                    <div class="circle2" style="color: #f3f3f3; font-weight: bold;">
+                                                        <section style="margin-top: 35%;">
+                                                            {{estado}}
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                                <footer class="blockquote-footer">
+                                                    <small class="text-muted">
+                                                        Jugadores con estado <strong>Plus</strong>
+                                                    </small>
+                                                </footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm">
+                                        <div class="card">
+                                            <blockquote class="blockquote mb-0 card-body">
+                                                <div class="section" style="display: flex; justify-content: center;">
+                                                    <div class="circle3" style="justify-content: center; align-items: center; color: #f3f3f3; font-weight: bold;">
+                                                        <section style="margin-top: 35%;">
+                                                            {{profesional}}
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                                <footer class="blockquote-footer">
+                                                    <small class="text-muted">
+                                                        Jugadores <strong>Profesionales</strong>
+                                                    </small>
+                                                </footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+            </div>
+
+            <div class="col-2">
+                <div class="text-center" style="margin: 0%; padding: 0%;">
+                    <ul class="nav flex-column">
+                        <li class="nav-item scroll-containerII" style="border-bottom-left-radius: 20%; border-top-left-radius: 20%;">
+                            <div class="nombresScrollII text-center" id="page-1" *ngFor="let datoJugador of jugador">
+                                <a routerLink="/data/{{datoJugador.account_id}}" style="display: flex; justify-content: center;">
+                                    <div class="card" style="width: 10rem; border: 1px solid #f3f3f3;">
+                                        <div class="card-header">
+                                            <img [src]="datoJugador.avatar" width="auto" height="20px">
+                                            Nombre: {{datoJugador.name}}
+                                        </div>
+                                        <div class="card-body text-primary" style="text-decoration: none;">
+                                            Equipo: {{datoJugador.team_name}}
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #celulares>
+
+    <nav class="navbar navbar-expand-lg navbar-dark banner">
+        <a class="navbar-brand" routerLink="">
+            <img src="../../../assets/Ket.jpg" class="img-fluid" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active word">
+                    <a class="nav-link icon" href="#">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                        </svg>
+                        <section>Home</section>
+                    </a>
+                </li>
+                <li class="nav-item active word">
+                    <a class="nav-link icon" href="#">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-outbound" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                        <section>Clientes por llamar</section>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row text-center" style="margin-bottom: 5%; margin-top: 10%;">
+        <div class="col-sm" style="font-size: 200%">Hola Fabián!</div>
+    </div>
+
+    <div class="row" style="margin-bottom: 2.5%; margin-top: 10%;">
+        <div class="col-sm text-center">
+            <div class="card cardSizeCircle">
+                <div class="title" style="margin-bottom: 5%;">Estado General</div>    
+                
+                <div>
+                    <div>
+                      <div style="display: block">
+                        <canvas baseChart
+                          [data]="doughnutChartData"
+                          [labels]="doughnutChartLabels"
+                          [chartType]="doughnutChartType">
+                        </canvas>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm text-center">
+            <div class="card cardSizeTable">
+                <blockquote class="blockquote mb-0 card-body">
+                    <div class="title" style="margin-bottom: 5%;">Meta grupal</div>
+                    <div class="progress">
+                        <progress style="padding-right: 10px; font-size: 4rem; background-color: orange; " max="500" value="{{rolFantasy}}">{{rolFantasy}}</progress>
+                    </div>
+                    <small class="text-muted">
+                        {{rolFantasy}} Jugadores con <strong>Papel de fantasia</strong> mayor de 3, de 500!
+                    </small>
+                    <div class="progress">
+                        <progress style="padding-right: 10px; font-size: 4rem; background-color: orange; " max="50" value="{{chess}}">{{chess}}</progress>
+                    </div>
+                    <small class="text-muted">
+                        {{chess}} Jugadores <strong>Cheese</strong>, de 50!
+                    </small>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <div class="col-sm" style="display: flex; justify-content: center;">
+                        <div class="card bg-light mb-3" style="max-width: 18rem; border-radius: 5%;">
+                            <div class="card-header">
+                                <strong style="font-size: 100%;" style="color: #5A5B5D;">Conexiones de agenda para hoy</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="scroll-container">
+                                    <div class="nombresScroll text-center" *ngFor="let contacto of cliente">
+                                        <a routerLink="">
+                                            {{contacto.localized_name}}; este usuario tiene {{contacto.roles.length}} roles
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-award" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l-1.51-.229L8 1.126l-1.355.702-1.51.229-.684 1.365-1.086 1.072L3.614 6l-.25 1.506 1.087 1.072.684 1.365 1.51.229L8 10.874l1.356-.702 1.509-.229.684-1.365 1.086-1.072L12.387 6l.248-1.506-1.086-1.072-.684-1.365z"/>
+                                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col" style="margin-bottom: 10%;">
+                    <div class="card text-center">
+                        <blockquote class="blockquote mb-0 card-body">
+                            <strong>Tu plan para hoy!</strong>
+                        </blockquote>
+                    </div>
+                    <div class="col text-center">
+                        <div class="card cardSizeNivels">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <div class="section" style="display: flex; justify-content: center;">
+                                    <div class="circle1" style="color: #f3f3f3; font-weight: bold;">
+                                        <section style="margin-top: 35%;">
+                                            {{equipoSerenity}}
+                                        </section>
+                                    </div>
+                                </div>
+                                <footer class="blockquote-footer">
+                                    <small class="text-muted">
+                                        Jugadores del equipo <strong>Team Serenity</strong>
+                                    </small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="card cardSizeNivels">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <div class="section" style="display: flex; justify-content: center; align-items: center;">
+                                    <div class="circle2" style="color: #f3f3f3; font-weight: bold;">
+                                        <section style="margin-top: 35%;">
+                                            {{estado}}
+                                        </section>
+                                    </div>
+                                </div>
+                                <footer class="blockquote-footer">
+                                    <small class="text-muted">
+                                        Jugadores con estado <strong>Plus</strong>
+                                    </small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="col-sm text-center">
+                        <div class="card">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <div class="section" style="display: flex; justify-content: center;">
+                                    <div class="circle3" style="justify-content: center; align-items: center; color: #f3f3f3; font-weight: bold;">
+                                        <section style="margin-top: 35%;">
+                                            {{profesional}}
+                                        </section>
+                                    </div>
+                                </div>
+                                <footer class="blockquote-footer">
+                                    <small class="text-muted">
+                                        Jugadores <strong>Profesionales</strong>
+                                    </small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="col-sm" style="display: flex; justify-content: center; margin-top: 1%;">
+                        <div class="card bg-light mb-3" style="max-width: 18rem; border-radius: 5%;">
+                            <div class="card-header">
+                                <strong style="font-size: 100%;" style="color: #5A5B5D;">Conexiones de agenda para hoy</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="scroll-container">
+                                    <div class="nombresScroll text-center" *ngFor="let datoJugador of jugador">
+                                        <a routerLink="/data/{{datoJugador.account_id}}" style="display: flex; justify-content: center;">
+                                            <div class="card" style="width: 10rem; border: 1px solid #f3f3f3;">
+                                                <div class="card-header">
+                                                    <img [src]="datoJugador.avatar" width="auto" height="20px">
+                                                    Nombre: {{datoJugador.name}}
+                                                </div>
+                                                <div class="card-body text-primary" style="text-decoration: none;">
+                                                    Equipo: {{datoJugador.team_name}}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</ng-template>

@@ -1,0 +1,255 @@
+/*NAVBAR*/
+.menu a 
+{
+    color: #f3f3f3;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+.menu li 
+{
+    margin-right: 70px;
+}
+.menu a::before 
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #F0B87A, #FC9303, #FF7B00);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}  
+.menu a:hover::before 
+{
+    transform: scaleX(1);
+}
+/*HOME*/
+.fecha
+{
+    background: #FC9303;
+    color: #252850;
+    padding: 1%;
+    border-radius: 50%;
+}
+.scroll-container 
+{
+    display: block;
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+/*Responsive designed*/
+@media (min-width: 1025px)
+{
+    .imgLogo img
+    {
+        margin-top: 150%;
+    }
+    .menu a 
+    {
+        margin-top: 25%;
+    }
+    .icon svg
+    {
+        color: #f3f3f3;
+        width: auto;
+        height: 25px;
+    }   
+    .nombresScroll a
+    {
+        font-size: 18px;
+        list-style: none;
+        text-decoration: none;
+        color: #5A5B5D;
+    }   
+    .nombresScroll a:hover
+    {
+        font-size: 18px;
+        list-style: none;
+        text-decoration: none;
+        color: #FF7B00;
+        font-weight: bold;
+    }   
+    .nombresScrollII a
+    {
+        font-size: 12px;
+        list-style: none;
+        text-decoration: none;
+        color: #5A5B5D;
+        margin: 1%;
+    }   
+    .nombresScrollII a:hover
+    {
+        font-size: 15px;
+        list-style: none;
+        text-decoration: none;
+        color: #FF7B00;
+        font-weight: bold;
+    } 
+    .scroll-containerII 
+    {
+        background: #252850;
+        display: block;
+        height: 1250px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    .circle1
+    {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(#fff0f5, #d6a0c3, #cf3476);
+        border-radius: 50%;
+        margin-bottom: 1%;
+    }
+    .circle2
+    {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(#c4dabd, #a6c89d, #4c9141);
+        border-radius: 50%;
+        margin-bottom: 1%;
+    }
+    .circle3
+    {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(#e9b9b9, #cc7577, #a72b3c);
+        border-radius: 50%;
+        margin-bottom: 1%;
+    }
+}
+@media (min-width: 760px) and (max-width: 1024px)
+{
+    .imgLogo img
+    {
+        margin-top: 150%;
+    }
+    .menu a 
+    {
+        margin-top: 55%;
+    }
+    .icon svg
+    {
+        color: #f3f3f3;
+        width: auto;
+        height: 30px;
+    }
+    .nombresScroll
+    {
+        font-size: 20px;
+        list-style: none;
+    }
+}
+@media (min-width: 300px) and (max-width: 767px)
+{
+    .banner
+    {
+        background: #252850;
+    }
+    .imgLogo img
+    {
+        margin-top: 100%;
+    }
+    .icon svg
+    {
+        color: #f3f3f3;
+        width: auto;
+        height: 25px;
+    }   
+    .cardSizeCircle
+    {
+        max-width: 100%;
+        height: 250px;
+        margin-bottom: 1%;
+    }
+    .cardSizeTable
+    {
+        max-width: 100%;
+        height: 200px;
+        margin-bottom: 1%;
+    }
+    .cardSizeNivels
+    {
+        width: 100%;
+        height: 220px;
+        margin-bottom: 1%;
+    }
+    .cardSizeScroll
+    {
+        max-width: 80%;
+        height: 200px;
+        margin-bottom: 1%;
+    }
+    .nombresScroll a
+    {
+        font-size: 18px;
+        list-style: none;
+        text-decoration: none;
+        color: #5A5B5D;
+    }   
+    .nombresScroll a:hover
+    {
+        font-size: 18px;
+        list-style: none;
+        text-decoration: none;
+        color: #FF7B00;
+        font-weight: bold;
+    }   
+    .nombresScrollII a
+    {
+        font-size: 12px;
+        list-style: none;
+        text-decoration: none;
+        color: #5A5B5D;
+        margin: 1%;
+    }   
+    .nombresScrollII a:hover
+    {
+        font-size: 15px;
+        list-style: none;
+        text-decoration: none;
+        color: #FF7B00;
+        font-weight: bold;
+    } 
+    .scroll-containerII 
+    {
+        background: #252850;
+        display: block;
+        height: 1250px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    .circle1
+    {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(#fff0f5, #d6a0c3, #cf3476);
+        border-radius: 50%;
+        margin-bottom: 1%;
+    }
+    .circle2
+    {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(#c4dabd, #a6c89d, #4c9141);
+        border-radius: 50%;
+        margin-bottom: 1%;
+    }
+    .circle3
+    {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(#e9b9b9, #cc7577, #a72b3c);
+        border-radius: 50%;
+        margin-bottom: 1%;
+    }
+}
